@@ -1,0 +1,99 @@
+uuid: 58e92556-0c3b-4111-a2ab-f24defd9a586
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project.field_description
+    - field.field.node.project.field_project_status
+    - node.type.project
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          5d88885b-5e8e-4f11-b92d-3991c752470b:
+            uuid: 5d88885b-5e8e-4f11-b92d-3991c752470b
+            region: content
+            configuration:
+              id: 'extra_field_block:node:project:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 67-33
+        components:
+          59254a68-dbbb-487e-b1ab-3af014fcad6f:
+            uuid: 59254a68-dbbb-487e-b1ab-3af014fcad6f
+            region: second
+            configuration:
+              id: 'field_block:node:project:field_project_status'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          6bac33e5-3722-449e-9f7e-cedfa3783393:
+            uuid: 6bac33e5-3722-449e-9f7e-cedfa3783393
+            region: first
+            configuration:
+              id: 'field_block:node:project:field_description'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.project.default
+targetEntityType: node
+bundle: project
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_project_status:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

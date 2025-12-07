@@ -1,0 +1,20 @@
+uuid: 8f907ff1-1f3a-4c18-8f06-57ff36e59425
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_due_date
+field_name: field_due_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
